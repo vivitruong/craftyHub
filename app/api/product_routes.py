@@ -131,3 +131,21 @@ def edit_product(product_id):
       return {'errors': validation_errors_to_error_messages(form.errors)}, 400
   else:
     return {'errors': ['Unauthorized']}, 403
+
+@product.route("/<int:product_id>", methods=['DELETE'])
+@login_required
+# delete product by id
+def delete_product(product_id):
+  product = Product.query.get(product_id)
+
+  if product.seller_id == current_user.id:
+    db.session.delete(product)
+    db.session.commit()
+
+    return jsonify({
+      'message': 'Product successfully deleted',
+      'status_code': 200
+    }), 200
+
+  else:
+    return {'errors': ['Unauthorized']}, 403
