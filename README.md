@@ -1,6 +1,6 @@
-# Flask React Project
+# Crafty Hub
 
-This is the starter for the Flask React project.
+This is an etsy clone
 
 ## Getting started
 1. Clone this repository (only this branch)
