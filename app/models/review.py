@@ -34,3 +34,4 @@ class Review(db.Model):
         return {
             'stars' : int(self.stars)
         }
+# to be able to install that we need to
