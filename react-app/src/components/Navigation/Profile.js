@@ -72,3 +72,4 @@ const Profile = ({ user, setSelectedCategory }) => {
       )
 
     }
+    export default Profile;
