@@ -32,3 +32,43 @@ const Profile = ({ user, setSelectedCategory }) => {
 
       return () => document.removeEventListener("click", closeMenu);
     }, [showDropdown]);
+
+    return (
+        <div className='navBar-profile-outer'>
+          <div onClick={openMenu} className='navBar-profile'>
+            <img src={user?.profile_pic} className='profile-user-img' alt='profile'></img>
+            <img src={downArrow} className='profile-down-arrow-img' alt='profile'></img>
+          </div>
+          {showDropdown ?
+            <>
+              <span className="triangle-dropdown"></span>
+              <div className='profile-dropdown'>
+                <div className='dropdown-item-top'>
+                  <img src={user?.profile_pic} className='profile-user-img' alt='profile'></img>
+                  <div className='profile-name'>{user.first_name}</div>
+                </div>
+                <Link to='/purchases'>
+                  <div className='dropdown-item' onClick={() => { setShowDropdown(!showDropdown); setSelectedCategory() }}>
+                    <img src={purchases} className='profile-purchases-img' alt='purchases'></img>
+                    <div className='profile-purchase'>Purchases and reviews</div>
+                  </div>
+                </Link>
+                <Link to='/shop'>
+                  <div className='dropdown-item' onClick={() => { setShowDropdown(!showDropdown); setSelectedCategory() }}>
+                    <img src={shop} className='profile-shop-img' alt='shop'></img>
+                    <div className='profile-shop'>Sell on Happily</div>
+                  </div>
+                </Link>
+                <div className='dropdown-item'>
+                  <div onClick={onLogout} className='sign-out-outer'>
+                    <img src={signOut} className='sign-out-img' alt='signOut'></img>
+                    <div className='profile-purchase'>Sign out</div>
+                  </div>
+                </div>
+              </div>
+            </> : <></>
+          }
+        </div >
+      )
+
+    }
