@@ -129,3 +129,116 @@ const Product = () => {
           <NotFound />
         )
       }
+
+      return (
+        <>
+          {product &&
+            <div className='product-main'>
+              <div className='product-left-main'>
+                <div className='product-image-main'>
+                  <div className='product-preview-image-outer'>
+                    {product[productId]?.images?.length > 0 && product[productId]?.images?.map((image, i) => {
+                      return (
+                        <img src={image} className='product-preview-image' key={i} onClick={() => { setSelectedImage(image) }} alt='product'></img>
+                      )
+                    })}
+                  </div>
+                  <div className='product-main-image-outer'>
+                    <img src={selectedImage ? selectedImage : product[productId]?.images[0]} className='product-main-image' alt='product'></img>
+                  </div>
+                </div>
+                <div className='product-reviews-main'>
+                  <div className='product-reviews-header'>
+                    <div className='product-reviews-num-ratings'>
+                      {product[productId]?.reviews?.length !== 1 ? <>{product[productId]?.reviews?.length} shop reviews</> : <>{product[productId]?.reviews?.length} shop review</>}
+                      {product[productId]?.reviews?.length === 0 && <div className='empty-stars-outer'>
+                        <img src={emptyStar} className='empty-star first-star' alt='star'></img>
+                        <img src={emptyStar} className='empty-star' alt='star'></img>
+                        <img src={emptyStar} className='empty-star' alt='star'></img>
+                        <img src={emptyStar} className='empty-star' alt='star'></img>
+                        <img src={emptyStar} className='empty-star' alt='star'></img>
+                      </div>}
+                    </div>
+                    <div className='product-review-stars'>
+                      {rating?.map((star, i) => {
+                        return (
+                          <img src={star} className='product-review-stars' key={i} alt='star'></img>
+                        )
+                      })}
+                    </div>
+                  </div>
+                  <div className='product-review-main'>
+                    {product[productId]?.reviews?.map((review, i) => {
+                      return (
+                        <div className='product-review-outer' key={i}>
+                          <div className='product-review-user-rating'>
+                            {review?.stars <= 0.5 && <span>{starsDisplay(halfStars)}</span>}
+                            {review?.stars > 0.5 && review?.stars <= 1 && <span>{starsDisplay(oneStar)}</span>}
+                            {review?.stars > 1 && review?.stars <= 1.5 && <span>{starsDisplay(oneHalfStar)}</span>}
+                            {review?.stars > 1.5 && review?.stars <= 2 && <span>{starsDisplay(twoStar)}</span>}
+                            {review?.stars > 2 && review?.stars <= 2.5 && <span>{starsDisplay(twoHalfStar)}</span>}
+                            {review?.stars > 2.5 && review?.stars <= 3 && <span>{starsDisplay(threeStar)}</span>}
+                            {review?.stars > 3 && review?.stars <= 3.5 && <span>{starsDisplay(threeHalfStar)}</span>}
+                            {review?.stars > 3.5 && review?.stars <= 4 && <span>{starsDisplay(fourStar)}</span>}
+                            {review?.stars > 4 && review?.stars <= 4.5 && <span>{starsDisplay(fourHalfStar)}</span>}
+                            {review?.stars > 4.5 && <span>{starsDisplay(fiveStar)}</span>}
+                          </div>
+                          <div className='product-review-content'>{review.content}</div>
+                          <div className='product-review-user'>
+                            <div className='product-review-user-img-outer'><img className='product-review-user-img' src={users[review.user_id]?.profile_pic} alt='user'></img></div>
+                            <div className='product-review-user-name'>{users[review.user_id]?.first_name}</div>
+                            <div className='product-review-date'>{formatDate(review?.created_at)}</div>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </div>
+              <div className='product-right-main'>
+                <div className='product-right-upper'>
+                  {notification &&
+                    <div className='notification-outer'>
+                      <img src={check} alt='check'></img>
+                      <span className='notification-message'>You added {count} {count === 1 ? "item" : "items"} to your <Link to='/cart' className='view-cart-link'>cart</Link>!</span>
+                    </div>
+                  }
+                  <Link to={`/shop/${product[productId]?.shop_name}`}><div className='product-shop-name'>{product[productId]?.shop_name}</div></Link>
+                  <div className='product-rating'>
+                    {product[productId]?.reviews?.length > 0 ? <>
+                      <div className='product-sales'>{`${(Math.floor(Math.random() * (2000 - 200 + 1) + 200)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} sales`} <span className='divider'>&nbsp; | &nbsp;</span></div>
+                      <div className='product-rating-outer'>
+                        {rating?.map((star, i) => {
+                          return (
+                            <img src={star} className='product-rating-stars' key={i} alt='star'></img>
+                          )
+                        })}
+                      </div>
+                    </> : <></>}
+                  </div>
+                  <div className='product-name'>{product[productId]?.name}</div>
+                  <div className='product-price'>${product[productId]?.price.toFixed(2)}</div>
+                  <div className='product-cart-outer'>
+                    {!user && <button className='product-cart-button' onClick={() => addToCart(product[productId])}>Sign in to purchase</button>}
+                    {user && user?.id !== product[productId]?.seller_id && <button className='product-cart-button' onClick={() => addToCart(product[productId])}>Add to cart</button>}
+                    {user && user?.id === product[productId]?.seller_id && <button className='disabled-product-cart-button'>Unable to purchase</button>}
+                  </div>
+                </div>
+                <div className='product-right-lower'>
+                  <div className='product-description-header'>Description</div>
+                  <div className='product-description'>{product[productId]?.description}</div>
+                </div>
+              </div>
+            </div>
+          }
+          {showSignIn && (
+            <Modal onClose={() => setShowSignIn(false)}>
+              <LoginForm setShowSignIn={setShowSignIn} />
+            </Modal>
+          )}
+          <Footer />
+        </>
+      )
+    }
+
+    export default Product
