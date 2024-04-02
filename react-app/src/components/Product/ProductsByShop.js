@@ -13,3 +13,23 @@ import starSeller from '../CSS/Images/shop_star_seller.svg'
 import editPencil from '../CSS/Images/edit_pencil.svg'
 import addIcon from '../CSS/Images/add_icon.svg'
 import Footer from '../Navigation/Footer';
+
+const ProductsByShop = () => {
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const { shopName } = useParams()
+    const user = useSelector(state => state.session.user)
+    const shop = useSelector(state => Object.values(state.shop))
+    const products = useSelector(state => Object.values(state.products))
+    const shopProducts = products.filter((product) => product?.seller_id === shop[0]?.user_id)
+    const [editShop, setEditShop] = useState(false)
+    const [name, setName] = useState(shopName)
+    const [title, setTitle] = useState("")
+    const [location, setLocation] = useState("")
+    const [shopErrors, setShopErrors] = useState([])
+
+    useEffect(() => {
+      dispatch(getAllProducts())
+      dispatch(findShop(shopName))
+      document.documentElement.scrollTop = 0;
+    }, [shopName])
