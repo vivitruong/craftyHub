@@ -33,3 +33,18 @@ const ProductsByShop = () => {
       dispatch(findShop(shopName))
       document.documentElement.scrollTop = 0;
     }, [shopName])
+
+    useEffect(() => {
+        const shopErrors = []
+        let validChar = new RegExp(/^[A-Za-z]+$/)
+        if (!validChar.test(name)) shopErrors.push('Shop Name: Shop Name must only contain alphabetical characters')
+        if (name.split(" ").length > 1) shopErrors.push('Shop Name: Shop Name must not contain spaces')
+        if (name.length < 4 || name.trim().length < 4) {
+          shopErrors.push('Shop Name: Shop Name requires 4 characters minimum')
+        }
+        if (name.length > 30) shopErrors.push('Shop Name: Shop Name exceeds 30 character limit')
+        if (title?.length > 60) shopErrors.push('Title: Title exceeds 60 character limit')
+        if (location?.length > 50) shopErrors.push('Location: Location exceeds 50 character limit')
+
+        setShopErrors(shopErrors)
+      }, [name, title, location])
