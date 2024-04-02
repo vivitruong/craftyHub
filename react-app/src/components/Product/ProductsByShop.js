@@ -131,3 +131,62 @@ const ProductsByShop = () => {
                 </div>
               </div>
             </div>
+            <div className='user-shop-main'>
+          <div className='user-shop-caption'>Items
+            {user?.id === shop[0]?.user_id && <img src={addIcon} alt='add' className='user-shop-add-icon' onClick={handleAddItems}></img>}
+          </div>
+          <div className='user-shop-products-main'>
+            {shopProducts?.map((product, i) => {
+              return (
+                <Link to={`/products/${product?.id}`} key={i}>
+                  <div className='user-shop-product-inner'>
+                    <div className='user-shop-product-img-outer'>
+                      {product?.images?.length > 0 && <img src={product?.images} className='user-shop-product-img' alt='product'></img>}
+                    </div>
+                    <div className='user-shop-product-name'>{product.name}</div>
+                    <div className='user-shop-product-price'>${product?.price.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                      <span className='user-shop-free-shipping'>FREE shipping</span>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </div>}
+      {editShop && (
+        <Modal onClose={() => setEditShop(false)}>
+          <form onSubmit={handleEditShopForm} className='edit-form-outer'>
+            <div className='edit-main'>
+              <div className="edit-form-upper">
+                <button className="edit-return-shop-button" onClick={() => { setEditShop(false) }}>Return to Shop</button>
+                <div className='edit-header'>Update Shop</div>
+              </div>
+              <div>
+                <label className='edit-label'>Shop Name *</label>
+              </div>
+              {shopErrors?.map((error, i) => {
+                if (error.split(":")[0] === 'Shop Name')
+                  return (
+                    <div key={i} className='user-shop-product-errors'>-{error.split(":")[1]}</div>
+                  )
+              })}
+              <div>
+                <input
+                  type='text'
+                  className='edit-input-shop'
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  maxLength={31}
+                />
+              </div>
+              <div>
+                <label className='edit-label'>Title</label>
+                <span className='edit-instructions'>-Keep it short and simple</span>
+              </div>
+              {shopErrors?.map((error, i) => {
+                if (error.split(":")[0] === 'Title')
+                  return (
+                    <div key={i} className='user-shop-product-errors'>-{error.split(":")[1]}</div>
+                  )
+              })}
