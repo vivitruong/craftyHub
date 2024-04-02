@@ -48,3 +48,47 @@ const ProductsByShop = () => {
 
         setShopErrors(shopErrors)
       }, [name, title, location])
+
+      const handleEditShop = () => {
+        setEditShop(true)
+        setName(shopName)
+        setTitle(shop[0]?.title)
+        setLocation(shop[0]?.location)
+      }
+
+      const handleAddItems = () => {
+        history.push('/shop')
+      }
+
+      const handleEditShopForm = async (e) => {
+        e.preventDefault()
+
+        if (shopErrors.length > 0) return
+
+        const userData = {
+          id: user.id,
+          shop_name: name
+        }
+
+        const shopData = {
+          shop_name: name,
+          title,
+          location
+        }
+
+        if (shopName !== name) {
+          const userResponse = await dispatch(editUser(userData))
+
+          if (userResponse) {
+            await dispatch(getUsers())
+            history.push(`/shop/${name}`)
+          } else setShopErrors(['Shop Name: Shop Name is already in use'])
+        }
+
+        const shopResponse = await dispatch(updateShop(shopData))
+
+        if (shopResponse) {
+          dispatch(findShop(name))
+          setEditShop(false)
+        }
+      }
