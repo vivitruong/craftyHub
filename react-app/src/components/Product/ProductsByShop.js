@@ -92,3 +92,42 @@ const ProductsByShop = () => {
           setEditShop(false)
         }
       }
+
+      return (
+        <>
+          {shop?.length > 0 && <div className='user-shop-main'>
+            <div className='user-shop-upper'>
+              <div className='user-shop-header'>
+                <div className='user-shop-header-left'>
+                  {shop[0]?.icon.length > 0 ? <img src={shop[0]?.icon} className='shop-icon-img' alt='shop-icon'></img> :
+                    <div className='shop-icon-no-img' alt='shop-icon'><span>Image coming soon</span></div>}
+                  <div className='user-shop-info-outer'>
+                    <div className='user-shop-name' onClick={() => handleEditShop()}>{shopName}
+                      {user?.id === shop[0]?.user_id && <span className='user-shop-edit-outer'>
+                        <span className='user-shop-edit'>Edit</span>
+                        <img src={editPencil} className='user-shop-edit-pencil' alt='edit pencil'></img>
+                      </span>}
+                    </div>
+                    <div className='user-shop-title'>{shop[0]?.title}</div>
+                    <div className='user-shop-location'>{shop[0]?.location}</div>
+                    <div className='user-shop-star-seller'><img src={starSeller} className='star-seller-icon' alt='star-seller'></img>Star Sellar</div>
+                  </div>
+                </div>
+                <div className='user-shop-header-middle'>
+                  <div className='user-shop-feature'>
+                    <img src={smoothShipping}></img>
+                    <div className='user-shop-feature-title'>Smooth Shipping</div>
+                    <div className='user-shop-feature-caption'>Has a history of shipping on time with tracking.</div>
+                  </div>
+                  <div className='user-shop-feature'>
+                    <img src={speedyReplies}></img>
+                    <div className='user-shop-feature-title'>Speed replies</div>
+                    <div className='user-shop-feature-caption'>Has a history of replying to messages quickly.</div>
+                  </div>
+                </div>
+                <div className='user-shop-header-right'>
+                  <img src={shop[0]?.user[0]?.profile_pic} className='user-shop-profile-img'></img>
+                  <div className='user-shop-profile-name'>{shop[0]?.user[0]?.first_name}</div>
+                </div>
+              </div>
+            </div>
