@@ -190,3 +190,45 @@ const ProductsByShop = () => {
                     <div key={i} className='user-shop-product-errors'>-{error.split(":")[1]}</div>
                   )
               })}
+
+<div>
+                <textarea
+                  type='text'
+                  className='edit-input-shop edit-textarea-shop'
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  maxLength={61}
+                />
+              </div>
+              <div>
+                <label className='edit-label'>Location</label>
+                <span className='edit-instructions'>-Tell others where you're located</span>
+              </div>
+              {shopErrors?.map((error, i) => {
+                if (error.split(":")[0] === 'Location')
+                  return (
+                    <div key={i} className='user-shop-product-errors'>-{error.split(":")[1]}</div>
+                  )
+              })}
+              <div>
+                <input
+                  type='text'
+                  className='edit-input-shop'
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  maxLength={51}
+                />
+              </div>
+              <div className='edit-save-button-outer'>
+                <button type="submit" className='edit-save-button' disabled={shopErrors.length > 0}>Save and Update</button>
+              </div>
+            </div>
+          </form>
+        </Modal>
+      )}
+      <Footer />
+    </>
+  )
+}
+
+export default ProductsByShop
