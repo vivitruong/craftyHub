@@ -95,3 +95,63 @@ const Reviews = ({ productId, purchaseId, reviewStars, setReviewStars, setAddRev
           setAddReview(false)
         }
       }
+
+
+      return (
+        <>
+          <Modal onClose={() => setAddReview(false)}>
+            <form onSubmit={handleReview} className='create-review-form'>
+              <div className="review-return-outer">
+                <button className="review-return-button" onClick={() => { setAddReview(false) }}>Return to Purchases</button>
+              </div>
+              <div className="create-review-header">{editReview ? "Update Review" : "Leave a Review"}</div>
+              <div className="review-product-upper">
+                <div className="review-product-img-outer"><img src={products[productId].images[0]} className="review-product-img" alt='product'></img></div>
+                <div className="review-product-right">
+                  <div className="review-product-right-name">{products[productId].name}</div>
+                  <div className="review-product-right-shop-name">Purchased from
+                    <span className="review-inner-text">&nbsp;{purchases[purchaseId].shop_name}</span> on
+                    <span className="review-inner-text">&nbsp;{formatDate(purchases[purchaseId].created_at)}</span>
+                  </div>
+                </div>
+              </div>
+              <div className="create-review-stars-outer">
+                <div className="create-stars-review-header">My Review Rating *</div>
+                <img src={ratedStar1 ? filledStar : unfilledStar} className='create-stars-display' onClick={() => changeReviewStars(1)} alt='star'></img>
+                <img src={ratedStar2 ? filledStar : unfilledStar} className='create-stars-display' onClick={() => changeReviewStars(2)} alt='star'></img>
+                <img src={ratedStar3 ? filledStar : unfilledStar} className='create-stars-display' onClick={() => changeReviewStars(3)} alt='star'></img>
+                <img src={ratedStar4 ? filledStar : unfilledStar} className='create-stars-display' onClick={() => changeReviewStars(4)} alt='star'></img>
+                <img src={ratedStar5 ? filledStar : unfilledStar} className='create-stars-display' onClick={() => changeReviewStars(5)} alt='star'></img>
+              </div>
+              <div className="create-review-instructions">
+                <div className="create-review-instructions-header">Helpful reviews on Etsy mention:</div>
+                <div className="create-review-instructions-section">- the quality of the item</div>
+                <div className="create-review-instructions-section">- if the item matched the description</div>
+                <div className="create-review-instructions-section">- if the item met your expectations</div>
+              </div>
+              <div className="create-review-content-outer">
+                <label className="create-review-content-header">Review *</label>
+                {errors?.map((error, i) => {
+                  if (error.split(":")[0] === 'Content')
+                    return (
+                      <div key={i} className='create-review-errors'>-{error.split(":")[1]}</div>
+                    )
+                })}
+                <textarea
+                  type='text'
+                  className='create-review-text-area'
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  maxLength="1001"
+                />
+              </div>
+              <div className="create-review-button-outer">
+                <button className="create-review-button">{editReview ? "Update review" : "Submit review"}</button>
+              </div>
+            </form>
+          </Modal>
+        </>
+      )
+    }
+
+    export default Reviews
