@@ -34,3 +34,64 @@ const Reviews = ({ productId, purchaseId, reviewStars, setReviewStars, setAddRev
         if (content.length > 1000) errors.push("Content: Review exceeds 1000 characters")
         setErrors(errors)
       }, [content])
+
+      const changeReviewStars = (num) => {
+        if (num >= 1) {
+          setReviewStars(1)
+          setRatedStar1(true)
+          setRatedStar2(false)
+          setRatedStar3(false)
+          setRatedStar4(false)
+          setRatedStar5(false)
+        }
+        if (num >= 2) {
+          setReviewStars(2)
+          setRatedStar2(true)
+        }
+        if (num >= 3) {
+          setReviewStars(3)
+          setRatedStar3(true)
+        }
+        if (num >= 4) {
+          setReviewStars(4)
+          setRatedStar4(true)
+        }
+        if (num >= 5) {
+          setReviewStars(5)
+          setRatedStar5(true)
+        }
+      }
+
+
+      const handleReview = async (e) => {
+        e.preventDefault()
+
+        if (errors.length > 0) return
+
+        if (editReview) {
+          const reviewData = {
+            review_id: reviewId,
+            product_id: productId,
+            stars: reviewStars,
+            content
+          }
+
+          dispatch(updateReview(reviewData))
+          dispatch(getAllUserReviews())
+          setEditReview(false)
+          setAddReview(false)
+
+
+        } else {
+          const reviewData = {
+            user_id: user.id,
+            product_id: productId,
+            stars: reviewStars,
+            content
+          }
+
+          dispatch(addNewReview(reviewData))
+          dispatch(getAllUserReviews())
+          setAddReview(false)
+        }
+      }
