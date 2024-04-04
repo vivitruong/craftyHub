@@ -19,3 +19,18 @@ const Reviews = ({ productId, purchaseId, reviewStars, setReviewStars, setAddRev
     const [ratedStar3, setRatedStar3] = useState(false)
     const [ratedStar4, setRatedStar4] = useState(false)
     const [ratedStar5, setRatedStar5] = useState(false)
+
+    useEffect(() => {
+        if (reviewStars >= 1) setRatedStar1(true)
+        if (reviewStars >= 2) setRatedStar2(true)
+        if (reviewStars >= 3) setRatedStar3(true)
+        if (reviewStars >= 4) setRatedStar4(true)
+        if (reviewStars >= 5) setRatedStar5(true)
+      }, [reviewStars])
+
+      useEffect(() => {
+        const errors = []
+        if (content.length < 10) errors.push("Content: Review must be at least 10 characters long")
+        if (content.length > 1000) errors.push("Content: Review exceeds 1000 characters")
+        setErrors(errors)
+      }, [content])
