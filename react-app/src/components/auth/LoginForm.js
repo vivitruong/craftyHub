@@ -37,6 +37,55 @@ const LoginForm = ({setShowSignIn}) => {
 
     return (
         <>
+          {showRegister ? <SignUpForm setShowRegister={setShowRegister} setShowSignIn={setShowSignIn} /> : <form onSubmit={onLogin} className='login-form-main'>
+        <div className='login-upper'>
+          <div className='login-header'>Sign in</div>
+          <div className='login-register-button' onClick={() => handleRegister()}>Register</div>
+        </div>
+        <div className='login-field-outer'>
+          <label className='login-label' htmlFor='email'>Email address *</label>
+          <input
+            name='email'
+            className='login-input'
+            type='text'
+            placeholder='Email'
+            value={email}
+            onChange={updateEmail}
+            maxLength={255}
+          />
+        </div>
+        <div className='login-error-outer'>
+          {errors?.map((error, i) => {
+            if (error.split(":")[0].toLowerCase() === 'email ')
+              return (
+                <div key={i} className='login-errors'>*{error.split(":")[1]}</div>
+              )
+          })}
+        </div>
+        <div className='login-field-outer'>
+          <label className='login-label' htmlFor='password'>Password *</label>
+          <input
+            name='password'
+            className='login-input'
+            type='password'
+            placeholder='Password'
+            value={password}
+            onChange={updatePassword}
+          />
+        </div>
+        <div className='login-error-outer'>
+          {errors?.map((error, i) => {
+            if (error.split(":")[0].toLowerCase() === 'password ')
+              return (
+                <div key={i} className='login-errors'>*{error.split(":")[1]}</div>
+              )
+          })}
+        </div>
+        <div className='login-buttons-outer'>
+          <button type='submit' className='login-form-button'>Sign in</button>
+          <button type='submit' className='login-form-demo-button' onClick={() => { setEmail('demo@aa.io'); setPassword('SecurePassword0411.') }}> Demo User</button>
+        </div>
+      </form >}
         </>
     )
 }
