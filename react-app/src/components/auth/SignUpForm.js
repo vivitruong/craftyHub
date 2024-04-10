@@ -84,3 +84,46 @@ const SignUpForm = ({ setShowRegister, setShowSignIn }) => {
                 <div key={i} className='login-errors'>*{error.split(":")[1]}</div>
               )
           })}
+           </div>}
+      <div>
+      </div>
+      <div className='signup-field-outer'>
+        <label className='signup-label'>Password *</label>
+        <input
+          type='password'
+          className='signup-input'
+          name='password'
+          onChange={updatePassword}
+          value={password}
+        ></input>
+      </div>
+      <div>
+        <div className='signup-field-outer'>
+          <label className='signup-label'>Repeat password *</label>
+          <input
+            type='password'
+            className='signup-input'
+            name='repeat_password'
+            onChange={updateRepeatPassword}
+            value={repeatPassword}
+            // required={true}
+          ></input>
+        </div>
+        <div className='login-error-outer'>
+          {errors.map((error, i) => {
+            if (error.split(":")[0].toLowerCase() === 'password ')
+              return (
+                <div key={i} className='login-errors'>*{error.split(":")[1]}</div>
+              )
+          })}
+        </div>
+        <div className='signIn-account-message'>Already have an account? <span onClick={() => setShowRegister(false)} className='signIn-from-register'>Sign in</span></div>
+      </div>
+      <div className='signup-buttons-outer'>
+        <button type='submit' className='signup-form-button'>Register</button>
+      </div>
+    </form>
+  );
+};
+
+export default SignUpForm;
