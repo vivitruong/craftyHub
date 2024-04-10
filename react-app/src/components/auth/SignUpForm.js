@@ -10,3 +10,18 @@ const SignUpForm = ({ setShowRegister, setShowSignIn }) => {
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
     const dispatch = useDispatch();
+
+    const onSignUp = async (e) => {
+        e.preventDefault();
+        if (password === repeatPassword) {
+          const data = await dispatch(signUp(first_name, email, password));
+          if (data) {
+            setErrors(data)
+          } else {
+            setShowSignIn(false)
+            setShowRegister(false)
+          }
+        } else {
+          setErrors(['Password : Passwords do not match'])
+        }
+      };
