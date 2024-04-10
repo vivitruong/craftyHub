@@ -41,3 +41,46 @@ const SignUpForm = ({ setShowRegister, setShowSignIn }) => {
       const updateRepeatPassword = (e) => {
         setRepeatPassword(e.target.value);
       };
+      return (
+        <form onSubmit={onSignUp} className='signup-form-main'>
+        <div className='signup-upper'>
+          <div className='signup-header'>Create your account</div>
+          <div className='signup-caption'>Registration is easy.</div>
+        </div>
+        <div className='signup-field-outer'>
+          <label className='signup-label'>Email address *</label>
+          <input
+            type='text'
+            className='signup-input'
+            name='email'
+            onChange={updateEmail}
+            value={email}
+            maxLength={255}
+          ></input>
+        </div>
+        {errors && <div className='signup-error-outer'>
+          {errors?.map((error, i) => {
+            if (error.split(":")[0].toLowerCase() === 'email ')
+              return (
+                <div key={i} className='signup-errors'>*{error.split(":")[1]}</div>
+              )
+          })}
+        </div>}
+        <div className='signup-field-outer'>
+          <label className='signup-label'>First name *</label>
+          <input
+            type='text'
+            className='signup-input'
+            name='firstName'
+            onChange={updateFirstName}
+            value={first_name}
+            maxLength={30}
+          ></input>
+        </div>
+        {errors && <div className='login-error-outer'>
+          {errors?.map((error, i) => {
+            if (error?.split(":")[0].toLowerCase() === 'first name ')
+              return (
+                <div key={i} className='login-errors'>*{error.split(":")[1]}</div>
+              )
+          })}
