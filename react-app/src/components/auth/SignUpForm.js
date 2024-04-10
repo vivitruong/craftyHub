@@ -25,3 +25,19 @@ const SignUpForm = ({ setShowRegister, setShowSignIn }) => {
           setErrors(['Password : Passwords do not match'])
         }
       };
+
+      const updateFirstName = (e) => {
+        setFirstName(e.target.value);
+      };
+
+      const updateEmail = (e) => {
+        setEmail(e.target.value);
+      };
+
+      const updatePassword = (e) => {
+        setPassword(e.target.value);
+      };
+
+      const updateRepeatPassword = (e) => {
+        setRepeatPassword(e.target.value);
+      };
