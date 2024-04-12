@@ -155,3 +155,78 @@
     font-family: GraphikLight, Arial, Helvetica, sans-serif;
     color: white;
   }
+
+  .sell-product-instructions {
+    color: white;
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding-left: 15px;
+  }
+
+  .product-shop-errors {
+    font-family: GraphikMedium, Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    color: red;
+    margin: 0 0 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .product-errors {
+    font-family: GraphikMedium, Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    color: red;
+    margin: 0.3rem 0;
+  }
+
+  .product-form-select {
+    cursor: pointer;
+  }
+
+  .product-form-input,
+  .product-form-select,
+  .product-form-text-area {
+    border: none;
+    border-radius: 10px;
+    height: 36px;
+    width: 500px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    outline: none;
+    margin-top: 0.2rem;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+  }
+
+  .product-form-text-area {
+    padding-top: 10px;
+    height: 120px;
+    max-height: 120px;
+    max-width: 500px;
+  }
+
+  .product-save-button {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 10px;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 200px;
+    height: 36px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 1440px) {
+    .main-shop-outer {
+      min-height: 62%;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .product-save-button {
+      margin-bottom: 1.5rem;
+    }
+  }
