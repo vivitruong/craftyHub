@@ -22,3 +22,136 @@
     z-index: -4;
     flex-direction: column;
   }
+
+  .sell-product-main-header {
+    color: white;
+    font-family: GuardianEgypThin, Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    width: 330px;
+  }
+
+  .get-started-button {
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 10px;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .sell-product-bottom {
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .product-bottom-icons {
+    padding: 0 3rem;
+  }
+
+  .product-bottom-inner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .bottom-icon-images {
+    height: 100px;
+  }
+
+  .product-bottom-header {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    margin-top: 0.6rem;
+  }
+
+  .product-bottom-icon-last {
+    padding: 0 1.5rem;
+  }
+
+  .first-page-main {
+    display: flex;
+    max-width: 400px;
+    flex-direction: column;
+  }
+
+  .first-page-main-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .first-page-main-upper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-form-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+  }
+
+  .product-form-header {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .product-form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .sell-product-name-shop-label,
+  .product-form-header {
+    color: white;
+    font-family: GuardianEgypThin, Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    margin-bottom: 1rem;
+  }
+
+  .sell-product-caption {
+    color: white;
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+    width: 405px;
+    text-align: center;
+  }
+
+  .user-form-input {
+    width: 400px;
+    height: 36px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    margin: 0.5rem 0 1rem;
+    outline: none;
+  }
+
+  .save-button-outer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .save-button {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 10px;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 100px;
+    cursor: pointer;
+  }
+
+  .sell-product-label {
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    color: white;
+  }
