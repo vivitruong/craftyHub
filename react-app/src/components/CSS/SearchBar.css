@@ -1,0 +1,22 @@
+.searchBar-main,
+.searchBar-main-noUser {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-right: 5px;
+}
+
+.searchBar-main {
+  width: 62%;
+}
+
+.searchBar-main-noUser {
+  width: 65.7%;
+}
+
+.searchBar-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
