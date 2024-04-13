@@ -3,3 +3,215 @@
     display: flex;
     justify-content: center;
   }
+  .purchase-header-main {
+    background-color: #F5F5F1;
+    position: absolute;
+    left: 0;
+    top: 120px;
+    width: 100%;
+    min-height: 100px;
+    min-width: 100%;
+    z-index: -3;
+    border-top: 1px solid rgba(128, 128, 128, 0.16);
+  }
+
+  .purchase-header {
+    margin: 2rem auto 0.5rem;
+    font-family: GuardianEgypLight, Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    width: 1216px;
+  }
+
+  .no-purchases-main,
+  .purchases-details-outer {
+    width: 1220px;
+    padding-top: 7.5rem;
+  }
+
+  .no-purchases-main {
+    font-family: GuardianEgypLight, Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .no-purchases-continue {
+    text-decoration: underline;
+  }
+
+  .no-purchases-continue:hover {
+    cursor: pointer;
+    color: rgba(82, 82, 82, 0.651)
+  }
+
+  .purchases-details-main {
+    margin-bottom: 2rem;
+  }
+
+  .purchases-details-main,
+  .purchases-bottom-outer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .purchases-details-left {
+    border: 1px solid #b9b9b9bf;
+    border-radius: 5px;
+    width: 80%;
+  }
+
+  .purchases-upper-outer {
+    border-bottom: 2px solid rgba(128, 128, 128, 0.265);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    align-items: center;
+    color: rgb(82, 82, 82);
+  }
+
+  .purchase-content-shop,
+  .purchase-content,
+  .purchase-shop-order {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    color: black;
+  }
+
+  .purchase-content-shop:hover {
+    text-decoration: underline;
+  }
+
+  .purchase-shop-order {
+    margin-bottom: 0.5rem;
+  }
+
+  .purchase-item-total {
+    margin-top: 0.5rem;
+  }
+
+  .purchase-product-img-outer {
+    width: 100px;
+    height: 100px;
+    padding: 20px 30px;
+  }
+
+  .purchase-product-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .purchase-product-info {
+    padding: 20px 20px 0 0
+  }
+
+  .purchase-product-name {
+    font-family: GuardianEgypMedium, Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+  }
+
+  .purchase-product-name:hover {
+    text-decoration: underline;
+  }
+
+  .purchase-product-review-outer {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    background-color: #F5F5F1;
+    font-size: 0.85rem;
+    padding: 5px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  .purchase-user-review-outer {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    background-color: #F5F5F1;
+    font-size: 0.85rem;
+    padding: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .purchase-user-review-upper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .purchase-review-header,
+  .purchase-user-review-header {
+    padding-right: 10px;
+  }
+
+  .purchase-review-star {
+    cursor: pointer;
+  }
+
+  .purchase-user-review-content {
+    margin-bottom: 0.8rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 600px;
+    overflow-x: auto;
+  }
+
+  .purchase-review-edit-button,
+  .purchase-review-delete-button {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 20px;
+    padding: 0 10px;
+  }
+
+  .purchase-review-edit-button {
+    margin-right: 10px;
+  }
+
+  .purchase-review-buttons-outer {
+    margin-bottom: 0.5rem;
+  }
+
+  .purchase-shipping-details {
+    margin-left: 1.5rem;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 220px;
+  }
+
+  .purchase-shipping-header {
+    font-family: GuardianEgypMedium, Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    padding-right: 10px;
+  }
+
+  .purchase-shipping-date {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+  }
+
+  .purchase-delivery-outer {
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+  }
+
+  .purchase-estimated-delivery {
+    color: rgb(84, 84, 84);
+    padding-right: 10px;
+  }
+
+  .order-receipt-outer {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+  }
+
+  .order-receipt-upper,
+  .order-receipt-bottom {
+    display: flex;
+    justify-content: space-between;
+  }
