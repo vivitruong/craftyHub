@@ -215,3 +215,140 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .order-receipt-upper {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.552);
+    padding-bottom: 0.5rem;
+  }
+
+  .order-receipt-bottom {
+    padding-top: 0.5rem;
+  }
+
+  .order-label,
+  .order-price {
+    display: flex;
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    padding-bottom: 0.1rem;
+  }
+
+  .order-price-free {
+    display: flex;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    padding-bottom: 0.1rem;
+    color: green;
+  }
+
+  .order-label-total {
+    display: flex;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+  }
+
+  .order-price,
+  .order-price-free {
+    justify-content: flex-end;
+  }
+
+  .order-price-total {
+    display: flex;
+    justify-content: flex-end;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+  }
+
+  .cancel-order-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    width: 100%;
+    height: 20px;
+  }
+
+  .cancel-order-button:disabled {
+    opacity: 0.1;
+  }
+
+  .cancel-confirm-outer,
+  .remove-confirm-outer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .cancel-confirm-outer {
+    width: 500px;
+  }
+
+  .cancel-return-button {
+    width: 134px;
+    padding: 5px 0;
+    border: none;
+    background-color: #F5F5F1;
+    color: #050404a6;
+    border-radius: 10px;
+    font-size: 11px;
+    font-family: GraphikThin, Arial, Helvetica, sans-serif;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  .cancel-message {
+    font-family: GuardianEgypRegular, Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    margin: 0.2rem 0 0.3rem;
+  }
+
+  .cancel-confirm {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+  }
+
+  .cancel-product-name {
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  .cancel-confirm-button-outer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .cancel-confirm-button {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    height: 30px;
+    cursor: pointer;
+    margin-top: 0.4rem;
+  }
+
+  @media screen and (max-width: 1440px) {
+
+    .purchase-header,
+    .no-purchases-main {
+      width: 1200px;
+    }
+
+    .purchases-details-outer {
+      width: 1210px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+
+    .purchase-header,
+    .no-purchases-main {
+      width: 1070px;
+    }
+
+    .purchases-details-outer {
+      width: 1080px;
+    }
+  }
