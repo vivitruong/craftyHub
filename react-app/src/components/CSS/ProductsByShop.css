@@ -14,3 +14,42 @@
     width: 1220px;
     margin: 0 auto 0;
   }
+
+  .user-shop-header-left {
+    display: flex;
+    margin: 20px 0;
+    width: 560px;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+
+  .shop-icon-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .shop-icon-no-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(228, 219, 238, 0.749);
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.847);
+    font-family: GraphikRegular;
+    font-size: 0.7rem;
+  }
+
+  .user-shop-info-outer {
+    padding: 10px 15px;
+  }
+
+  .user-shop-name {
+    font-family: GuardianEgypLight, Arial, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+  }
