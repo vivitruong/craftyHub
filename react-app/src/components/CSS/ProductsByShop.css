@@ -1,0 +1,16 @@
+.user-shop-upper {
+    background-color: #FAFAFA;
+    border-top: 1px solid #d6d6d6a6;
+    position: absolute;
+    left: 0;
+    top: 120px;
+    width: 100%;
+    min-height: 100px;
+    min-width: 100%;
+  }
+
+  .user-shop-header {
+    display: flex;
+    width: 1220px;
+    margin: 0 auto 0;
+  }
