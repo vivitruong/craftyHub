@@ -68,3 +68,62 @@
     font-size: 0.9rem;
     margin: 0.3rem 0 0.2rem;
   }
+  .category-product-stars {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.2rem;
+  }
+
+  .star-display {
+    padding-right: 2px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .category-product-num-reviews {
+    padding-left: 5px;
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #616161;
+  }
+
+  .category-product-price {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .category-product-shop {
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #616161;
+    margin-bottom: 0.8rem;
+  }
+
+  @media screen and (min-width: 1281px) and (max-width: 1440px) {
+    .category-header {
+      width: 1199px;
+    }
+
+    .category-main {
+      width: 1200px;
+    }
+
+    .category-products-main {
+      grid-template-columns: repeat(4, 303px);
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .category-header {
+      width: 1080px;
+    }
+
+    .category-main {
+      width: 1081px;
+    }
+
+    .category-products-main {
+      grid-template-columns: repeat(4, 273px);
+    }
+  }
