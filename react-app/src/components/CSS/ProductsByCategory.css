@@ -25,3 +25,46 @@
     margin: 0 auto 1.5rem;
     width: 1220px;
   }
+
+  .category-caption {
+    margin: 1rem 0;
+    font-family: GuardianEgypLight, Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+  }
+
+  .category-products-main {
+    display: grid;
+    grid-template-columns: repeat(4, 308px);
+    justify-content: center;
+  }
+
+  .category-product-inner {
+    margin: 0 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-product-img-outer {
+    width: 100%;
+    height: 250px;
+  }
+
+  .category-product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .category-product-name {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    margin: 0.3rem 0 0.2rem;
+  }
