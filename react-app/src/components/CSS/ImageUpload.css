@@ -21,3 +21,116 @@
     overflow: hidden;
     width: fit-content;
   }
+
+  .file-upload-label {
+    text-align: center;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    position: relative;
+    color: white;
+  }
+
+  .file-upload-outer,
+  .file-upload-outer-image {
+    border: 1px solid rgb(255, 255, 255);
+    width: 200px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .file-upload-outer:hover {
+    border: 1.5px solid #F1641E;
+  }
+
+  .file-upload-image {
+    display: flex;
+    padding: 0 2rem;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+    justify-content: center;
+  }
+
+  .photo-preview {
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .delete-image-outer {
+    height: 30px;
+    width: 30px;
+    background-color: rgba(104, 104, 104, 0.677);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+  }
+
+  .delete-image-x {
+    height: 20px;
+  }
+
+  .delete-image-outer:hover {
+    background-color: rgba(0, 0, 0, 0.878);
+  }
+
+  .image-upload-button-outer {
+    display: flex;
+    justify-content: flex-end;
+    width: 940px;
+  }
+
+  .image-upload-button {
+    border: none;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    height: 34px;
+    padding: 0 10px;
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    width: 80px;
+    margin-right: 1rem;
+  }
+
+  .loading-outer,
+  .image-errors-outer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .loading-message,
+  .image-error {
+    margin: 0 1rem 0.5rem 0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .loading-message {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+  }
+
+  .image-error {
+    font-family: GraphikMedium, Arial, Helvetica, sans-serif;
+    color: red;
+    font-size: 12px;
+    background-color: rgb(0, 0, 0);
+  }
