@@ -1,0 +1,31 @@
+.home-header {
+    display: flex;
+    justify-content: center;
+    font-family: GuardianEgypThin, Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    padding: 20px 0 15px;
+  }
+
+  .home-featured-circles-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homepage-back-drop {
+    border-top: 1px solid #e7dbcbb0;
+    height: 180px;
+    position: absolute;
+    width: 100%;
+    z-index: -3;
+    background-color: #FDEBD2;
+    top: 120px;
+  }
+
+  .feature-circle-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+  }
