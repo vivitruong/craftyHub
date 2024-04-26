@@ -29,3 +29,65 @@
     align-items: center;
     margin: 10px 20px;
   }
+
+  .featured-img-outer {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+  }
+
+  .featured-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .featured-name {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 0.85rem;
+    margin: 10px;
+  }
+
+  .display-product-main,
+  .sponsored-products-main,
+  .unique-products-main,
+  .shop-products-outer {
+    padding: 1rem 1.5rem 1.5rem;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+
+  .display-product-main {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(5, 100px);
+  }
+
+  .display-product-outer,
+  .sponsored-product-outer,
+  .unique-product-outer {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .display-product-price {
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
+  }
+
+  .display-product-price,
+  .sponsored-product-price,
+  .unique-product-price {
+    background-color: white;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.116);
+    font-family: GraphikMedium, Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
