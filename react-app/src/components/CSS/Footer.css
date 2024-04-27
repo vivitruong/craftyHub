@@ -1,0 +1,119 @@
+.footer-outer-main {
+    position: absolute;
+    bottom: -1;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .main-footer-img {
+    transform: rotate(180deg);
+    width: 100%;
+  }
+
+  .footer-upper {
+    overflow-y: hidden;
+    height: 35px;
+  }
+  .footer-middle {
+    overflow-y: hidden;
+    width: 100%;
+    height: 20px;
+    background-color: #4D6BC6;
+  }
+
+  .footer-lower {
+    overflow-y: hidden;
+    min-width: 100%;
+    height: 100px;
+    background-color: #2F466C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .footer-happily-header {
+    color: white;
+    font-family: GuardianEgypRegular, Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+  }
+
+  .footer-happily-description {
+    color: white;
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+  }
+
+  .socials-outer,
+  .socials-inner,
+  .footer-middle-right {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .socials-outer {
+    width: 100%;
+    justify-content: space-between;
+    width: 1230px;
+  }
+
+  .socials-inner {
+    align-items: flex-end;
+    margin-left: 1rem;
+  }
+
+  .social-logo {
+    background-color: white;
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+  }
+
+  .social-text {
+    padding-bottom: 8px;
+    color: white;
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+    margin: 0 10px;
+    font-size: 0.85rem;
+  }
+
+  .social-text:hover {
+    color: rgba(232, 232, 232, 0.62);
+  }
+
+
+  @media screen and (min-width: 1920px) {
+    .footer-middle {
+      height: 25px;
+    }
+
+    .footer-upper {
+      height: 30px;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    .footer-upper {
+      height: 28px;
+    }
+
+    .footer-middle {
+      height: 30px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .socials-outer {
+      width: 1180px;
+    }
+
+    .footer-upper {
+      height: 28px;
+    }
+
+    .footer-middle {
+      height: 30px;
+    }
+  }
