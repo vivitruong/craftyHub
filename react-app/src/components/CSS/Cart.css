@@ -61,3 +61,109 @@
     height: 20px;
     width: 100px;
   }
+  .cart-product-quantity {
+    text-align: center;
+  }
+
+  .cart-product-quantity {
+    font-size: 1rem;
+  }
+
+  .quantity-button {
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.503);
+    height: 16px;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    padding: 0 2px 2px 2px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  .quantity-button:disabled {
+    border: 1px solid rgba(0, 0, 0, 0.145);
+  }
+
+  .cart-product-price {
+    margin: 0 1rem;
+    font-size: 1rem;
+    width: 80px;
+  }
+
+  .cart-purchase-total-outer {
+    border: 1px solid rgba(205, 205, 205, 0.313);
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgb(34 34 34 / 15%);
+    height: fit-content;
+  }
+
+  .cart-fees-upper,
+  .cart-fees-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-size: 0.85rem;
+  }
+
+  .cart-fees-upper {
+    font-family: GraphikLight, Arial, Helvetica, sans-serif;
+  }
+
+  .cart-total-price-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .cart-fees-bottom {
+    font-family: GraphikRegular, Arial, Helvetica, sans-serif;
+    border-top: 1.5px solid rgba(192, 192, 192, 0.668);
+    padding-top: 0.5rem;
+  }
+
+  .cart-total,
+  .cart-fee-label,
+  .cart-fee-price-shipping,
+  .cart-fee-price {
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-fee-price-shipping {
+    color: #017A00;
+  }
+
+  .checkout-button {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 28px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 1280px) {
+    .cart-header {
+      width: 1080px;
+    }
+
+    .cart-main {
+      grid-template-columns: 780px 300px;
+    }
+
+    .cart-product-name {
+      width: 52%;
+    }
+  }
