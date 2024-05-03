@@ -1,8 +1,8 @@
 # Crafty Hub
 
-This is an etsy clone
+This is an etsy clone that build off Python, React, Redux, and Progres
 
-## Getting started
+## Tools and Features
 1. Clone this repository (only this branch)
 
 2. Install dependencies
@@ -34,6 +34,7 @@ This is an etsy clone
    ```bash
    flask seed all
    ```
+
 
    ```bash
    flask run
