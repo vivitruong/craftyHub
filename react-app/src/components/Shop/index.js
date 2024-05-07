@@ -33,6 +33,23 @@ const dispatch = useDispatch()
     setErrors(errors)
   }, [name, category, price, description])
 
+  useEffect(() => {
+    const shopErrors = []
+    let validChar = new RegExp(/^[A-Za-z]+$/)
+    if(!validChar.test(shopName)) shopErrors.push('Shop Name: Shop Name must only contain alphabetical character')
+    if(shopName.split(" ").length > 1) shopErrors.push('Shop Name: Shop Name must not contain spaces')
+    if(shopName.length < 4 || shopName.trim().length < 4){
+      shopErrors.push('Shop Name " Sop Name requires at least 4 chracters ')
+      setCheckDuplicate(false)
+    }
+    if(shopName.length > 30 ) shopErrors.push('Shop Name: Shop Name reached over 30 character')
+    setShopErrors(shopErrors)
+
+    if(checkDuplicate === true){
+      shopErrors.push('Shop Name: Shop Name is already taken')
+    }
+  })
+
 
 
 
