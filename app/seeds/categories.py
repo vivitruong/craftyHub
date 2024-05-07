@@ -10,7 +10,8 @@ def seed_categories():
         Category(name='Guestbook'),
         Category(name='Seating'),
         Category(name='Signage'),
-        Category(name='Table Decor&Centerpieces')
+        Category(name='Table Decor&Centerpieces'),
+        Category(name ='Decor')
 
     ]
 

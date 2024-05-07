@@ -36,7 +36,6 @@ def product_by_id(product_id):
   product = db.session.query(Product).get(product_id)
   reviews = db.session.query(Review).filter(Review.product_id == product_id).all()
   images = db.session.query(Image).filter(Image.product_id == product_id).all()
-
   seller = db.session.query(User).filter(User.id == product.seller_id).first()
 
   avg = None

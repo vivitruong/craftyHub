@@ -12,6 +12,7 @@ def shop_name_exists(form, field):
     if user and current_user.id != user.id:
         raise ValidationError('Your shop\'s name is already in use')
 
+
 class ShopNameForm(FlaskForm):
     shop_name = StringField(
         'shop_name', validators=[DataRequired(), shop_name_exists, Length(min=4, max=30, message='Your shop\'s name must be between 4 and 30 characters'), Regexp('^[a-zA-Z]+$', message='Your shop\'s name must only include alphabetical characters')])
