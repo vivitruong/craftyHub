@@ -48,8 +48,57 @@ const dispatch = useDispatch()
     if(checkDuplicate === true){
       shopErrors.push('Shop Name: Shop Name is already taken')
     }
-  })
+  }, [shopName, checkDuplicate])
 
+  const checkShopName = () => {
+    if(shopName) setPage(2)
+    else setPage(1)
+
+  }
+
+  const handlerUserSubmit = async(e) => {
+    e.preventDefault()
+
+    const userData = {
+      id: user.id,
+      shop_name: shopName
+    }
+
+    const response = await dispatch(editUser(userData))
+
+    if (response) {
+      setPage(2)
+    } else {
+      setCheckDuplicate(true)
+    }
+
+  }
+
+  const handleProductSubmit = async (e) => {
+    e.preventDefault()
+
+    if(errors.length > 0) {
+      return
+    }
+
+    const productData = {
+      name,
+      price,
+      category,
+      description
+    }
+
+    const response = await dispatch(addNewProduct(productData))
+    if(response) {
+      setProductId(response.id)
+      setPage(3)
+    }
+  }
+  return (
+    <>
+    </>
+
+  )
 
 
 
