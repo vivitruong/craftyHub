@@ -152,31 +152,113 @@ const dispatch = useDispatch()
       </>
       }
       {page === 2 &&
-      <form onSubmit={handleProductSubmit}>
-        <div className='main-shop-outer'>
-          <div className='product-form-main'>
-            <div className='product-form-header'>Create a Listing</div>
-             <div className='product-form-field'></div>
-             <div>
-              <label className='sell-product-label'>Title *</label>
-              <span className='sell-product-instructions'>Include keywords that buyers would use to search for your item</span>
-             </div>
-             {errors?.map((error, i) => {
-              if(error.split(":")[0] === 'Name')
-              return(
-                <div key={i} className='product-errors'>-{error.split(":")[1]}</div>
-            )
-             })}
-
+        <form onSubmit={handleProductSubmit}>
+          <div className='main-shop-outer'>
+            <div className='product-form-main'>
+              <div className='product-form-header'>Create a Listing</div>
+              <div className='product-form-field'>
+                <div>
+                  <label className='sell-product-label'>Title *</label>
+                  <span className='sell-product-instructions'>Include keywords that buyers would use to search for your item.</span>
+                </div>
+                {errors?.map((error, i) => {
+                  if (error.split(":")[0] === 'Name')
+                    return (
+                      <div key={i} className='product-errors'>-{error.split(":")[1]}</div>
+                    )
+                })}
+                <div>
+                  <input
+                    type='text'
+                    className='product-form-input'
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    maxLength="141"
+                  />
+                </div>
+              </div>
+              <div className='product-form-field'>
+                <div>
+                  <label className='sell-product-label'>Category *</label>
+                  <span className='sell-product-instructions'>Select a category to help shoppers fi your product.</span>
+                </div>
+                {errors?.map((error, i) => {
+                  if (error.split(":")[0] === 'Category')
+                    return (
+                      <div key={i} className='product-errors'>-{error.split(":")[1]}</div>
+                    )
+                })}
+                <div className='select-outer'>
+                  <select
+                    htmlFor='category'
+                    name='category'
+                    className='product-form-select'
+                    onChange={(e) => setCategory(e.target.value)}
+                  >
+                    <option disabled selected value={category}>-- Select a Category --</option>
+                    {categories?.map((category) => {
+                      return (
+                        <option
+                          value={category.name}
+                          className='product-form-options'>{category.display_name}</option>
+                      )
+                    })}
+                  </select>
+                </div>
+              </div>
+              <div className='product-form-field'>
+                <div>
+                  <label className='sell-product-label'>Price *</label>
+                  <span className='sell-product-instructions'>Remember to factor in the cost of materials, labor, and other business expenses.</span>
+                </div>
+                {errors?.map((error, i) => {
+                  if (error.split(":")[0] === 'Price')
+                    return (
+                      <div key={i} className='product-errors'>-{error.split(":")[1]}</div>
+                    )
+                })}
+                <input
+                  type='number'
+                  step={0.01}
+                  min={0}
+                  className='product-form-input'
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </div>
+              <div className='product-form-field'>
+                <div>
+                  <label className='sell-product-label'>Description *</label>
+                  <span className='sell-product-instructions'>Start with a brief overview that describes your item's finest features.</span>
+                </div>
+                {errors?.map((error, i) => {
+                  if (error.split(":")[0] === 'Description')
+                    return (
+                      <div key={i} className='product-errors'>-{error.split(":")[1]}</div>
+                    )
+                })}
+                <textarea
+                  type='text'
+                  className='product-form-text-area'
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  maxLength="1001"
+                />
+              </div>
+              <div className='save-button-outer'>
+                <button type="submit" className='product-save-button'>Save and Continue</button>
+              </div>
+            </div>
           </div>
-        </div>
-
-      </form>
+        </form>
       }
-    </div>
-
+      {page === 3 &&
+        <div className='main-shop-outer'>
+          <ImageUpload productId={productId} />
+        </div>
+      }
+    </div >
   )
-
-
-
 }
+
+export default Shop
