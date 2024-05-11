@@ -27,7 +27,7 @@ class Review(db.Model):
             'product_id': self.product_id,
             'content': self.content,
             'stars': self.stars,
-            'created_at': self.created_at
+            'created_at': self.created_at,
         }
 
     def to_dict_stars(self):

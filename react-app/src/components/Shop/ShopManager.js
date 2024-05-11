@@ -38,7 +38,23 @@ const ShopManager = () => {
         setDeleteConfirmation(false)
     }
 
-    return(<>
-    </>)
+    return(
+        <div className="my-products-main">
+            <div className="my-products-upper">
+                <div className="my-products-header">Shop Manager</div>
+                {user?.shop_name &&
+                <div className="my-products-shop">
+                <Link to={`/shop/${user?.shop_name}`}>
+              <span className="shop-manager-shop-name">{user?.shop_name}</span>
+            </Link>
+            <img src={rightAngle} className='shop-manager-right-icon' alt=''></img>
+                </div>
+                }
+
+            </div>
+
+        </div>
+
+    )
 
 }
