@@ -23,6 +23,21 @@ const ShopManager = () => {
         }
     },[products.length])
 
+    const handleEdit = (id) => {
+        setProductId(id)
+        setShowEditForm(true)
+    }
+
+    const handleDelete = (id) => {
+        setProductId(id)
+        setDeleteConfirmation(true)
+    }
+
+    const confirmDelete = () => {
+        dispatch(removeProduct(productId))
+        setDeleteConfirmation(false)
+    }
+
     return(<>
     </>)
 
