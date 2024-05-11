@@ -37,6 +37,7 @@ def edit_shop_name(id):
 
         return user.to_dict(), 200
 
+
     else:
         return {'errors': validation_errors_to_error_messages(form.errors)}, 400
 

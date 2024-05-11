@@ -24,4 +24,5 @@ class Shop(db.Model):
             'title': self.title,
             'location': self.location,
             'icon': self.icon,
+
         }
