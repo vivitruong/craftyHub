@@ -22,6 +22,7 @@ NavLink {
     margin: 0 5px;
     display: flex;
     align-items: center;
+
   }
 
   .sign-in {
@@ -59,6 +60,7 @@ NavLink {
     font-size: 39px;
     line-height: 19.6px;
     padding-right: 5px;
+
   }
 
   .navBar-searchBar-outer {
@@ -119,12 +121,10 @@ NavLink {
     .navBar-main {
       width: 1216px;
     }
-
     .navBar-featured-outer {
       width: 1200px;
       margin: 0 auto;
     }
-
     .navBar-feature, .navBar-feature-active {
       margin: 0 1.1rem;
     }

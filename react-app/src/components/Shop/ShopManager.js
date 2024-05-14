@@ -52,6 +52,33 @@ const ShopManager = () => {
                 }
 
             </div>
+            <div className="my-products-outer">
+                {products && <div className="my-products-inner">
+                    {products?.reverse().map((product, i) => {
+                        return (
+                            <>
+                            <div className="my-products-img-main" key={i}>
+                                <Link to={`/products/${product?.id}`} onClick={() => dispatch(findProductById(product?.id))}>
+                                    {product?.image?.length > 0 && <img src={product?.images[0]} className='my-products-img' alt='product'></img>}
+                                </Link>
+                            </div>
+                            <div className="my-products-info">
+                                <div className="my-product-category">{product?.category.split("&").join(' & ')}</div>
+                                <div className="my-product-name">{product?.name}</div>
+                                <div className="my-product-price">${product?.price.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</div>
+                                <div className="my-product-buttons">
+                                <button className="my-product-edit-button" onClick={() => handleEdit(product?.id)}>Edit</button>
+                                <button className="my-product-delete-button" onClick={() => { handleDelete(product?.id) }}>Delete</button>
+                                </div>
+                            </div>
+                            </>
+                        )
+                    })}
+
+                </div>
+                    }
+
+            </div>
 
         </div>
 

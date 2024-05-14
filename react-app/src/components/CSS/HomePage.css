@@ -351,10 +351,11 @@
   border: 1px solid rgba(128, 128, 128, 0.274);
   height: fit-content;
   margin: 50px 10px 10px 10px;
-  padding: 10px;
+  padding:10px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
+
 }
 
 .shop-product-outer {
