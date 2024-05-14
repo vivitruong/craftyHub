@@ -125,5 +125,6 @@
 
     .category-products-main {
       grid-template-columns: repeat(4, 273px);
+
     }
   }

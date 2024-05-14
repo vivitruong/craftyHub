@@ -52,6 +52,25 @@ const ShopManager = () => {
                 }
 
             </div>
+            <div className="my-products-outer">
+                {products && <div className="my-products-inner">
+                    {products?.reverse().map((product, i) => {
+                        return (
+                            <>
+                            <div className="my-products-img-main" key={i}>
+                                <Link to={`/products/${product?.id}`} onClick={() => dispatch(findProductById(product?.id))}>
+                                    {product?.image?.length > 0 && <img src={product?.images[0]} className='my-products-img' alt='product'></img>}
+                                </Link>
+
+                            </div>
+                            </>
+                        )
+                    })}
+
+                </div>
+                    }
+
+            </div>
 
         </div>
 
