@@ -32,5 +32,19 @@ const ImageUpload = ({productId}) => {
 
         if(image || image2 || image3 || image4) setErrors([])
 
-    })
+        if (brokenImage === true || brokenImage2 === true || brokenImage3 === true || brokenImage4 === true) setErrors(['Invalid image was uploaded. Please upload a different image'])
+        else setErrors([])
+
+    },[image, image2, image3, image4, brokenImage, brokenImage2, brokenImage3, brokenImage4])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        if(errors.length > 0){
+            return
+        }
+        if(multiImages.length === 0){
+            setErrors(['Minimum of one image upload required'])
+            return
+        }
+    }
 }
