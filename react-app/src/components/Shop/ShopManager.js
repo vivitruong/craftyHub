@@ -75,8 +75,23 @@ const ShopManager = () => {
                         )
                     })}
 
-                </div>
-                    }
+                </div>}
+                {showEditForm && (
+                    <Modal onClose={() => setShowEditForm(false)}>
+                        <div className="delete-confirm-outer">
+                            <button onClick={() => setDeleteConfirmation(false)} className="delete-return-button">
+                                Return to Shop Manager
+                            </button>
+                            <div className="ddelete-message">Permanently delete seleteced product?</div>
+                            <div className="delete-confirm-button-outer">
+                                <button onClick={confirmDelete} className="delete-confirm-button"></button>
+                            </div>
+
+
+                        </div>
+
+                    </Modal>
+                )}
 
             </div>
 
