@@ -46,5 +46,27 @@ const ImageUpload = ({productId}) => {
             setErrors(['Minimum of one image upload required'])
             return
         }
+        setImageLoading(true);
+        for(let i = 0; i< multiImages.length; i++) {
+            const imageData= new FormData();
+            imageData.append("product_id", productId);
+            imageData.append("user_id", user.id)
+            imageData.append("image", multiImages[i]);
+            await dispatch(uploadImages(imageData))
+        }
+
+        setImageLoading(false);
+        await dispatch(getAllProducts())
+        const response = await dispatch(findProductById(productId))
+        if (response) history.push(`/products/${productId}`)
+    }
+
+    const updateImage = (e) => {
+        const file = e.target.files[0];
+        setImage(file)
+        setBrokenImage(false)
+    }
+    const updateImage2 = (e) => {
+
     }
 }
