@@ -67,6 +67,7 @@ const ImageUpload = ({productId}) => {
         setBrokenImage(false)
     }
     const updateImage2 = (e) => {
-
+        const file = e.target.files[0]
+        setImage(file)
     }
 }
