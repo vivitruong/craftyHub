@@ -100,3 +100,5 @@ const ShopManager = () => {
     )
 
 }
+
+export default ShopManager

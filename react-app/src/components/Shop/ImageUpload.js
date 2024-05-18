@@ -68,6 +68,112 @@ const ImageUpload = ({productId}) => {
     }
     const updateImage2 = (e) => {
         const file = e.target.files[0]
-        setImage(file)
+        setImage2(file)
+        setBrokenImage2(false)
     }
+
+    const updateImage3 = (e) => {
+        const file = e.target.files[0]
+        setImage3(file)
+        setBrokenImage3(false)
+    }
+    const updateImage4 = (e) => {
+        const file = e.target.files[0];
+        setImage4(file);
+        setBrokenImage4(false);
+      }
+
+      return(
+        <div className="upload-image-main">
+              <div className="photo-header">Add Photos</div>
+      <div className="photo-caption">Upload up to four photos to show your item's most important qualities. <span>*Only GIFs, JPEGs, JPGs, PNGs, SVGs, TIFFs, and WEBPs accepted.</span></div>
+      <form onSubmit={handleSubmit}>
+        <div className="photo-upload-main">
+          <div className={image ? 'file-upload-outer-image' : 'file-upload-outer'}>
+            <label for='file-upload' className='file-upload-label'>
+              <img src={image ? URL.createObjectURL(image) : photo} className={image ? 'photo-preview' : 'file-upload-image'} alt='photo' onError={() => setBrokenImage(true)}></img>
+              {image ?
+                <div className="delete-image-outer">
+                  <img src={whiteX} className='delete-image-x' alt='delete'></img>
+                </div>
+                : 'Add Photo'}
+            </label>
+          </div>
+          {<div className={image2 ? 'file-upload-outer-image' : 'file-upload-outer'}>
+            <label for='file-upload2' className='file-upload-label'>
+              <img src={image2 ? URL.createObjectURL(image2) : photo} className={image2 ? 'photo-preview' : 'file-upload-image'} alt='photo' onError={() => setBrokenImage2(true)}></img>
+              {image2 ?
+                <div className="delete-image-outer">
+                  <img src={whiteX} className='delete-image-x' alt='delete'></img>
+                </div>
+                : 'Add Photo'}
+            </label>
+          </div>}
+          {<div className={image3 ? 'file-upload-outer-image' : 'file-upload-outer'}>
+            <label for='file-upload3' className='file-upload-label'>
+              <img src={image3 ? URL.createObjectURL(image3) : photo} className={image3 ? 'photo-preview' : 'file-upload-image'} alt='photo' onError={() => setBrokenImage3(true)}></img>
+              {image3 ?
+                <div className="delete-image-outer">
+                  <img src={whiteX} className='delete-image-x' alt='delete'></img>
+                </div>
+                : 'Add Photo'}
+            </label>
+          </div>}
+          {<div className={image4 ? 'file-upload-outer-image' : 'file-upload-outer'}>
+            <label for='file-upload4' className='file-upload-label'>
+              <img src={image4 ? URL.createObjectURL(image4) : photo} className={image4 ? 'photo-preview' : 'file-upload-image'} alt='photo' onError={() => setBrokenImage4(true)}></img>
+              {image4 ?
+                <div className="delete-image-outer">
+                  <img src={whiteX} className='delete-image-x' alt='delete'></img>
+                </div>
+                : 'Add Photo'}
+            </label>
+          </div>}
+        </div>
+        <input
+          id='file-upload'
+          type="file"
+          accept="image/*"
+          onChange={updateImage}
+          style={{ display: 'none' }}
+        />
+        <input
+          id='file-upload2'
+          type="file"
+          accept="image/*"
+          onChange={updateImage2}
+          style={{ display: 'none' }}
+        />
+        <input
+          id='file-upload3'
+          type="file"
+          accept="image/*"
+          onChange={updateImage3}
+          style={{ display: 'none' }}
+        />
+        <input
+          id='file-upload4'
+          type="file"
+          accept="image/*"
+          onChange={updateImage4}
+          style={{ display: 'none' }}
+        />
+        {imageLoading && <div className="loading-outer">
+          <p className="loading-message">Loading...</p>
+        </div>}
+        {errors && <div className="image-errors-outer">
+          {errors?.map((error, i) => {
+            return (
+              <div key={i} className="image-error">*{error}</div>
+            )
+          })}
+        </div>
+        }
+        <div className="image-upload-button-outer">
+          <button type="submit" className='image-upload-button'>Upload</button>
+        </div>
+      </form >
+        </div>
+      )
 }
+export default ImageUpload;
