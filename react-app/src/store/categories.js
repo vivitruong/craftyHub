@@ -30,4 +30,4 @@ const categoryReducer = (state = {}, action) => {
   }
 }
 
-export default categoryReducer
+export default categoryReducer;
