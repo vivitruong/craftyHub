@@ -35,4 +35,4 @@ const addImages = (newImage) => ({
     }
   }
 
-  export default imageReducer
+  export default imageReducer;
