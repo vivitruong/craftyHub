@@ -20,19 +20,19 @@ const addImages = (newImage) => ({
     }
   }
 
-  // const imageReducer = (state = {}, action) => {
-  //   let newState = {}
-  //   switch (action.type) {
+  const imageReducer = (state = {}, action) => {
+    let newState = {}
+    switch (action.type) {
 
-  //     case ADD_IMAGE: {
-  //       newState = { ...state }
-  //       newState[action.newImage.id] = action.newImage
-  //       return newState
-  //     }
+      case ADD_IMAGE: {
+        newState = { ...state }
+        newState[action.newImage.id] = action.newImage
+        return newState
+      }
 
-  //     default:
-  //       return state;
-  //   }
-  // }
+      default:
+        return state;
+    }
+  }
 
-  // export default imageReducer;
+  export default imageReducer;
