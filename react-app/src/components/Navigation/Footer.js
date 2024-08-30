@@ -36,6 +36,10 @@ const Footer = () => {
               <div><img src={portfolio} className='social-logo' alt=''></img></div>
               <div className='social-text'><a href='https://lynnettenguyen.github.io/' target="_blank">Portfolio</a></div>
             </div>
+            {/* <div className='socials-inner'>
+              <div><img src={portfolio} className='social-logo' alt=''></img></div>
+              <div className='social-text'><a href='https://lynnettenguyen.github.io/' target="_blank">Portfolio</a></div>
+            </div> */}
           </div>
         </div>
       </div>
