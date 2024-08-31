@@ -18,7 +18,12 @@ const ImageUpload = ({productId}) => {
     const [imageLoading, setImageLoading] = useState(null);
     const user = useSelector(state => state.session.user)
     const [errors, setErrors] = useState([])
-    const [brokenImage, setBrokenImage] = useState(state)
+    // const [brokenImage, setBrokenImage] = useState(state)
+    // const [brokenImage2, setBrokenImage2] = useState(state)
+    // const [brokenImage3, setBrokenImage3] = useState(state)
+    // const [brokenImage4, setBrokenImage4] = useState(state)
+
+      const [brokenImage, setBrokenImage] = useState(state)
     const [brokenImage2, setBrokenImage2] = useState(state)
     const [brokenImage3, setBrokenImage3] = useState(state)
     const [brokenImage4, setBrokenImage4] = useState(state)
